@@ -15,13 +15,30 @@
 
 
     <script src="js/menu.js"></script>
+	<script src="js/doors.js"></script>
     <script src="js/underscore-min.js"></script>
 
 </head>
 
 <body>
-    <div class="container">
-		<p>Hello</p>
+    <div class="mainContainer">
+		<div class="titleBox">
+			<p>5 Nights at Freddi Fish</p>
+		</div>
+		<div class="frame">
+			<img src="images/l_door_open.png" id="l_door" class="door">
+			<img src="images/l_door_closed.png" id="l_doorTop" class="door hidden">
+			<div id="l_bh" class="button_holder">
+					<button id="l_light_btn" type="button" class="btn btn-info" onclick="ll_click()">Light</button>
+					<button id="l_door_btn" type="button" class="btn btn-danger" onclick="ld_click()">Door</button>
+			</div>
+			<img src="images/r_door_open.png" id="r_door" class="door">
+			<img src="images/r_door_closed.png" id="r_doorTop" class="door hidden">
+			<div id="r_bh" class="button_holder">
+					<button id="r_light_btn" type="button" class="btn btn-info" onclick="rl_click()">Light</button>
+					<button id="r_door_btn" type="button" class="btn btn-danger" onclick="rd_click()">Door</button>
+			</div>
+		</div>
     </div>
 
 </body>
