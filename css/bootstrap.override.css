@@ -1,0 +1,19 @@
+/*
+	All styles that modify and override bootstrap defined identifiers must go here
+*/
+
+.container {
+	width:100%;
+}
+.nav input {
+    color: black;
+    border: none;
+    background-color: inherit;
+}
+.nav input .active {
+    border: 1px solid black;
+}
+.nav input:focus {
+    background-color: white;
+}
+
