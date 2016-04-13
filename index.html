@@ -15,6 +15,8 @@
 
 	<script src="js/doors.js"></script>
 	<script src="js/game.js"></script>
+	<script src="js/presentation.js"></script>
+	<script src="js/clock.js"></script>
     <script src="js/underscore-min.js"></script>
 
 </head>
@@ -36,6 +38,11 @@
 			<div id="r_bh" class="button_holder">
 					<button id="r_light_btn" type="button" class="btn btn-info" onclick="rl_click()">Light</button>
 					<button id="r_door_btn" type="button" class="btn btn-danger" onclick="rd_click()">Door</button>
+			</div>
+			<div class="game_button_holder">
+				<button id="start_button" type="button" class="btn btn-success" onclick="startGame()" >Start Game</button>
+				<button id="end_button" type="button" class="btn btn-warning hidden" onclick="userEndGame()" >End Game</button>
+				<div id="game_clock"><p></p></div>
 			</div>
 		</div>
     </div>
