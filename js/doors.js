@@ -10,12 +10,6 @@ var ld=false;
 var rl=false;
 var rd=false;
 
-//will be used to control monster textures
-//manipulated elsewhere
-var lm = false;
-var rm = false;
-
-
 //LEFT SIDE
 
 function ll_click()
@@ -90,4 +84,11 @@ function rd_click()
 		$("#r_doorTop").removeClass("hidden");
 		rd = true;
 	}
+}
+
+function resetDoors(){
+	ll=false;
+	ld=false;
+	rl=false;
+	rd=false;
 }

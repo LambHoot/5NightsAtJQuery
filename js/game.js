@@ -19,21 +19,14 @@ function startGame(){
 	//NO TRUE GAME LOOP
 	//ALL FUNCTIONS CALLED HERE HAVE INTERVALS
 	
-	//updateLM();
+	updateLM();
 	//updayeRM();
 }
 
 function resetGame(){
 	gameActive = false;
 	updateGameButtons();
-	clock = 0;
-	minutesPerHour = 1;
-	hoursToSurvive = 6;
-	$('#game_clock p').text('');
-	ll=false;
-	ld=false;
-	rl=false;
-	rd=false;
-	lm = false;
-	rm = false;
+	resetClock();
+	resetDoors();
+	resetMonsters();
 }
