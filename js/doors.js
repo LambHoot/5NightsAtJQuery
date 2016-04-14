@@ -91,4 +91,12 @@ function resetDoors(){
 	ld=false;
 	rl=false;
 	rd=false;
+	$("#l_light_btn").removeClass("active");
+	$("#r_light_btn").removeClass("active");
+	$("#l_door_btn").removeClass("active");
+	$("#r_door_btn").removeClass("active");
+	$("#l_doorTop").addClass("hidden");
+	$("#r_doorTop").addClass("hidden");
+	$("#l_door").attr("src", "images/l_door_open.png");
+	$("#r_door").attr("src", "images/r_door_open.png");
 }

@@ -19,7 +19,7 @@ function startGame(){
 	//NO TRUE GAME LOOP
 	//ALL FUNCTIONS CALLED HERE HAVE INTERVALS
 	
-	//updateLM();
+	updateLM();
 	updateRM();
 }
 
