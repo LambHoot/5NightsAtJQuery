@@ -19,6 +19,7 @@
 	<script src="js/clock.js"></script>
 	<script src="js/monster.js"></script>
 	<script src="js/battery.js"></script>
+	<script src="js/cameras.js"></script>
     <script src="js/underscore-min.js"></script>
 
 </head>
@@ -41,11 +42,17 @@
 					<button id="r_light_btn" type="button" class="btn btn-info" onclick="rl_click()">Light</button>
 					<button id="r_door_btn" type="button" class="btn btn-danger" onclick="rd_click()">Door</button>
 			</div>
+			<div class="camera_button_holder">
+				<button id="c_btn" type="button" class="btn btn-default" onclick="camera_clicked()">Cameras</button>
+			</div>
 			<div class="game_button_holder">
 				<button id="start_button" type="button" class="btn btn-success" onclick="startGame()" >Start Game</button>
 				<button id="end_button" type="button" class="btn btn-warning hidden" onclick="userEndGame()" >End Game</button>
 				<div id="game_clock"><p></p></div>
 				<div id="power_indicator"><p></p></div>
+			</div>
+			<div id="camera_screen" class="hidden">
+				wowLOLOLOLOLOL
 			</div>
 		</div>
     </div>

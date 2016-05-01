@@ -95,3 +95,18 @@
 	color: white;
 	font-size:11px;
 }
+
+.camera_button_holder{
+	text-align:center;
+	height:95%;
+	padding-top:50%;
+}
+#c_btn{
+	width:20%;
+}
+
+#camera_screen{
+	color:red;
+	position:absolute;
+	top:0;
+}
