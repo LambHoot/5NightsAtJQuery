@@ -15,6 +15,7 @@ function startGame(){
 	gameActive = true;
 	updateGameButtons();
 	updateClock();
+	updatePower();
 	
 	//NO TRUE GAME LOOP
 	//ALL FUNCTIONS CALLED HERE HAVE INTERVALS
@@ -29,4 +30,5 @@ function resetGame(){
 	resetClock();
 	resetDoors();
 	resetMonsters();
+	resetBattery();
 }

@@ -59,47 +59,64 @@ function moveLM(){
 	var new_activity_level = LM_activity_level;
 	//movement logic for LM
 	if(moveDecision(LM_activity_level)){
-		//try to go in
-		if(LM_position == LM_nb_rooms){
-			//check if door is closed
-			if(ld){
-				//reset the monster to 0
-				//alert("blocked left monster");
-				LM_position = 0;
-				LM_activity_level = 10;
-				lm = false;
-				if(ll){
-					$("#l_door").attr("src", "images/l_light.png");
+		//0 or 1
+		var direction = Math.random();
+		//>0.4 is forward, less is backward
+		//FORWARD
+		if(direction >= 0.4){
+			//try to go in
+			if(LM_position == LM_nb_rooms){
+				//check if door is closed
+				if(ld){
+					//reset the monster to 0
+					//alert("blocked left monster"); //play sound
+					LM_position = 0;
+					LM_activity_level = 10;
+					lm = false;
+					if(ll){
+						$("#l_door").attr("src", "images/l_light.png");
+					}
+				}
+				else{
+					lm = false;
+					alert("LEFT MONSTER KILLED YOU!");
+					clearInterval(LM_update_valid);
+					resetGame();
+					return;
 				}
 			}
+			new_position = updatePosition(LM_position, LM_nb_rooms, 1);
+			new_activity_level = updateActivityLevel(LM_activity_level, 1);
+		}
+		//BACKWARD
+		else{
+			new_position = updatePosition(LM_position, LM_nb_rooms, -1);
+			var activityLevelDownChance = Math.random();
+			if(activityLevelDownChance >= 0.5){
+				new_activity_level = updateActivityLevel(LM_activity_level, -1);
+			}
 			else{
-				lm = false;
-				alert("LEFT MONSTER KILLED YOU!");
-				clearInterval(LM_update_valid);
-				resetGame();
-				return;
+				new_activity_level = updateActivityLevel(LM_activity_level, 1);
 			}
 		}
-		new_position = updatePosition(LM_position, LM_nb_rooms, 1);
-		new_activity_level = updateActivityLevel(LM_activity_level, 1);
 	}
-	//try to move backwards
+	//no movement made
 	else{
-		var backwaldsChance = Math.floor((Math.random() * 100) + 1);
-		if(backwaldsChance <= 25){
-			new_position = updatePosition(LM_position, LM_nb_rooms, -1);
+		//activity level down
+		new_position = LM_position;
+		var activityLevelDownChance = Math.random();
+		if(activityLevelDownChance >= 0.5){
 			new_activity_level = updateActivityLevel(LM_activity_level, -1);
 		}
-		else{
-			//no move, activity level down
-			updateActivityLevel(LM_activity_level, -1);
-		}
 	}
+	//end of movement
+	//update monster position and activity level
 	LM_position = new_position;
 	LM_activity_level = new_activity_level;
 	//set if he's left outside
 	if(LM_position == LM_nb_rooms){
 		lm = true;
+		LM_activity_level = 10;//prevents the monster from staying outside the door for too long
 		if(ll){
 			$("#l_door").attr("src", "images/l_monster.png");
 		}
@@ -115,47 +132,64 @@ function moveRM(){
 	var new_activity_level = RM_activity_level;
 	//movement logic for RM
 	if(moveDecision(RM_activity_level)){
-		//try to go in
-		if(RM_position == RM_nb_rooms){
-			//check if door is closed
-			if(rd){
-				//reset the monster to 0
-				//alert("blocked right monster");
-				RM_position = 0;
-				RM_activity_level = 10;
-				rm = false;
-				if(rl){
-					$("#r_door").attr("src", "images/r_light.png");
+		//0 or 1
+		var direction = Math.random();
+		//>0.4 is forward, less is backward
+		//FORWARD
+		if(direction >= 0.4){
+			//try to go in
+			if(RM_position == RM_nb_rooms){
+				//check if door is closed
+				if(rd){
+					//reset the monster to 0
+					//alert("blocked right monster"); //play sound
+					RM_position = 0;
+					RM_activity_level = 10;
+					rm = false;
+					if(rl){
+						$("#r_door").attr("src", "images/r_light.png");
+					}
+				}
+				else{
+					rm = false;
+					alert("RIGHT MONSTER KILLED YOU!");
+					clearInterval(RM_update_valid);
+					resetGame();
+					return;
 				}
 			}
+			new_position = updatePosition(RM_position, RM_nb_rooms, 1);
+			new_activity_level = updateActivityLevel(RM_activity_level, 1);
+		}
+		//BACKWARD
+		else{
+			new_position = updatePosition(RM_position, RM_nb_rooms, -1);
+			var activityLevelDownChance = Math.random();
+			if(activityLevelDownChance >= 0.5){
+				new_activity_level = updateActivityLevel(RM_activity_level, -1);
+			}
 			else{
-				rm = false;
-				alert("RIGHT MONSTER KILLED YOU!");
-				clearInterval(RM_update_valid);
-				resetGame();
-				return;
+				new_activity_level = updateActivityLevel(RM_activity_level, 1);
 			}
 		}
-		new_position = updatePosition(RM_position, RM_nb_rooms, 1);
-		new_activity_level = updateActivityLevel(RM_activity_level, 1);
 	}
-	//try to move backwards
+	//no movement made
 	else{
-		var backwardsChance = Math.floor((Math.random() * 100) + 1);
-		if(backwardsChance <= 25){
-			new_position = updatePosition(RM_position, RM_nb_rooms, -1);
+		//activity level down
+		new_position = RM_position;
+		var activityLevelDownChance = Math.random();
+		if(activityLevelDownChance >= 0.5){
 			new_activity_level = updateActivityLevel(RM_activity_level, -1);
 		}
-		else{
-			//no move, activity level down
-			updateActivityLevel(RM_activity_level, -1);
-		}
 	}
+	//end of movement
+	//update monster position and activity level
 	RM_position = new_position;
 	RM_activity_level = new_activity_level;
 	//set if he's right outside
 	if(RM_position == RM_nb_rooms){
 		rm = true;
+		RM_activity_level = 10;//prevents the monster from staying outside the door for too long
 		if(rl){
 			$("#r_door").attr("src", "images/r_monster.png");
 		}
