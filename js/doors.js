@@ -10,12 +10,6 @@ var ld=false;
 var rl=false;
 var rd=false;
 
-//will be used to control monster textures
-//manipulated elsewhere
-var lm = false;
-var rm = false;
-
-
 //LEFT SIDE
 
 function ll_click()
@@ -25,6 +19,7 @@ function ll_click()
 		$("#l_light_btn").removeClass("active");
 		ll = false;
 		$("#l_door").attr("src", "images/l_door_open.png");
+		numDrainers--;
 	}
 	//turn on light
 	else{
@@ -36,6 +31,7 @@ function ll_click()
 		else{
 			$("#l_door").attr("src", "images/l_light.png");
 		}
+		numDrainers++;
 	}
 }
 function ld_click()
@@ -45,12 +41,14 @@ function ld_click()
 		$("#l_door_btn").removeClass("active");
 		$("#l_doorTop").addClass("hidden");
 		ld = false;
+		numDrainers--;
 	}
 	//close door
 	else{
 		$("#l_door_btn").addClass("active");
 		$("#l_doorTop").removeClass("hidden");
 		ld = true;
+		numDrainers++;
 	}
 }
 
@@ -63,6 +61,7 @@ function rl_click()
 		$("#r_light_btn").removeClass("active");
 		rl = false;
 		$("#r_door").attr("src", "images/r_door_open.png");
+		numDrainers--;
 	}
 	//turn on light
 	else{
@@ -74,6 +73,7 @@ function rl_click()
 		else{
 			$("#r_door").attr("src", "images/r_light.png");
 		}
+		numDrainers++;
 	}
 }
 function rd_click()
@@ -83,11 +83,28 @@ function rd_click()
 		$("#r_door_btn").removeClass("active");
 		$("#r_doorTop").addClass("hidden");
 		rd = false;
+		numDrainers--;
 	}
 	//close door
 	else{
 		$("#r_door_btn").addClass("active");
 		$("#r_doorTop").removeClass("hidden");
 		rd = true;
+		numDrainers++;
 	}
+}
+
+function resetDoors(){
+	ll=false;
+	ld=false;
+	rl=false;
+	rd=false;
+	$("#l_light_btn").removeClass("active");
+	$("#r_light_btn").removeClass("active");
+	$("#l_door_btn").removeClass("active");
+	$("#r_door_btn").removeClass("active");
+	$("#l_doorTop").addClass("hidden");
+	$("#r_doorTop").addClass("hidden");
+	$("#l_door").attr("src", "images/l_door_open.png");
+	$("#r_door").attr("src", "images/r_door_open.png");
 }
