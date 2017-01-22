@@ -1,6 +1,7 @@
 
 //important to note!
 var cameras_open = false;
+var camViewed = 0;
 $("#camera_screen").addClass("hidden");
 
 function camera_clicked(){
@@ -22,12 +23,23 @@ function camera_clicked(){
 	}
 }
 
+function changeCameraViewImage(){
+	$("#camera_view").attr("src", rooms[camViewed].img);
+}
+
+function cameraViewButtonClick(camButtonNum){
+	camViewed = camButtonNum;
+	changeCameraViewImage();
+}
+
 function updateCameraViews(){
 	UpdateAllRooms();
+	changeCameraViewImage();
 }
 
 function resetCameras(){
 	cameras_open = false;
+	camViewed = 0;
 	$("#camera_screen").addClass("hidden");
 	$("#c_btn").removeClass("active");
 }

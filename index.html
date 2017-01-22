@@ -19,8 +19,8 @@
 	<script src="js/clock.js"></script>
 	<script src="js/monster.js"></script>
 	<script src="js/battery.js"></script>
-	<script src="js/cameras.js"></script>
 	<script src="js/room.js"></script>
+	<script src="js/cameras.js"></script>
     <script src="js/underscore-min.js"></script>
 
 </head>
@@ -51,21 +51,37 @@
 			</div>
 			<div id="camera_screen" class="hidden">
 				⚫
-				<div id="current_camera_view">Current Camera View
+				<div id="current_camera_view">
+					<img id="camera_view" src="" height="100%">
 				</div>
 				<div id="camera_view_buttons_holder">
 					Camera Feed Select
 					<table>
-					  <tr>
-						<th><button id="CAM1_btn" type="button" class="btn btn-info" onclick="">CAM1</button></th>
-						<th><button id="CAM2_btn" type="button" class="btn btn-info" onclick="">CAM2</button></th>
-						<th><button id="CAM3_btn" type="button" class="btn btn-info" onclick="">CAM3</button></th>
-					  </tr>
-					  <tr>
-						<td><button id="CAM4_btn" type="button" class="btn btn-info" onclick="">CAM4</button></td>
-						<td><button id="CAM5_btn" type="button" class="btn btn-info" onclick="">CAM5</button></td>
-						<td><button id="CAM6_btn" type="button" class="btn btn-info" onclick="">CAM6</button></td>
-					  </tr>
+						<tr>
+							<td colspan="2"><button id="CAM0_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(0)">CAM0</button></td>
+						</tr>
+						<tr>
+							<td colspan="2"><button id="CAM1_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(1)">CAM1</button></td>
+						</tr>
+						<tr>
+							<td><button id="CAM2_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(2)">CAM2</button></td>
+							<td><button id="CAM3_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(3)">CAM3</button></td>
+						</tr>
+						<tr>
+							<td><button id="CAM4_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(4)">CAM4</button></td>
+							<td><button id="CAM5_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(5)">CAM5</button></td>
+						</tr>
+						<tr>
+							<td><button id="CAM6_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(6)">CAM6</button></td>
+							<td><button id="CAM7_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(7)">CAM7</button></td>
+						</tr>
+						<tr>
+							<td colspan="2"><button id="CAM8_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(8)">CAM8</button></td>
+						</tr>
+						<!--<tr>
+							<td><button id="CAM9_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(9)">CAM9</button></td>
+							<td><button id="CAM10_btn" type="button" class="btn btn-info centeredCameraViewButtons" onclick="cameraViewButtonClick(10)">CAM10</button></td>
+						</tr>-->
 					</table>
 				</div>
 			</div>

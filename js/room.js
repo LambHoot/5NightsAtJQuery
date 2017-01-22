@@ -57,14 +57,15 @@ rooms.push(new Room(5,3,"default"));
 rooms.push(new Room(6,4,"default"));
 rooms.push(new Room(7,4,"default"));
 rooms.push(new Room(8,5,"default"));
-rooms.push(new Room(9,6,"default"));
-rooms.push(new Room(10,6,"default"));
+//rooms.push(new Room(9,6,"default"));
+//rooms.push(new Room(10,6,"default"));
 
 function UpdateAllRooms(){
 	for(var i = 0; i < rooms.length; i++){
 		rooms[i].UpdateRoom();
 	}
 }
+UpdateAllRooms();
 
 function resetRooms(){
 	rooms = [];
@@ -77,6 +78,6 @@ function resetRooms(){
 	rooms.push(new Room(6,4,"default"));
 	rooms.push(new Room(7,4,"default"));
 	rooms.push(new Room(8,5,"default"));
-	rooms.push(new Room(9,6,"default"));
-	rooms.push(new Room(10,6,"default"));
+	//rooms.push(new Room(9,6,"default"));
+	//rooms.push(new Room(10,6,"default"));
 }

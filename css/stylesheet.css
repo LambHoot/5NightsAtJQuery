@@ -117,11 +117,22 @@
 }
 
 #current_camera_view{
-	background-color:white;
+	background-color:rgba(0, 0, 0, 0);
+	color:white;
+	height:90%;
+	margin:auto;
+	text-align:center;
 }
 
 #camera_view_buttons_holder{
-	background-color:blue;
+	position:absolute;
 	float:right;
-	top:90%;
+	bottom:10%;
+	right:0;
+}
+
+.centeredCameraViewButtons{
+	width:100%;
+	margin: auto;
+	text-align:center;
 }
