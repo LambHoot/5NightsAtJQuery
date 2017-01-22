@@ -35,6 +35,7 @@ function updateLM(){
 		LM_first_update = false;
 	}
 	moveLM();
+	updateCameraViews();
 }
 
 function updateRM(){
@@ -51,6 +52,7 @@ function updateRM(){
 		RM_first_update = false;
 	}
 	moveRM();
+	updateCameraViews();
 }
 
 //									MOVE LEFT MONSTER

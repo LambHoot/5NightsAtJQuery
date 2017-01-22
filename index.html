@@ -20,6 +20,7 @@
 	<script src="js/monster.js"></script>
 	<script src="js/battery.js"></script>
 	<script src="js/cameras.js"></script>
+	<script src="js/room.js"></script>
     <script src="js/underscore-min.js"></script>
 
 </head>
@@ -49,7 +50,24 @@
 				<div id="power_indicator"><p></p></div>
 			</div>
 			<div id="camera_screen" class="hidden">
-				wowLOLOLOLOLOL
+				⚫
+				<div id="current_camera_view">Current Camera View
+				</div>
+				<div id="camera_view_buttons_holder">
+					Camera Feed Select
+					<table>
+					  <tr>
+						<th><button id="CAM1_btn" type="button" class="btn btn-info" onclick="">CAM1</button></th>
+						<th><button id="CAM2_btn" type="button" class="btn btn-info" onclick="">CAM2</button></th>
+						<th><button id="CAM3_btn" type="button" class="btn btn-info" onclick="">CAM3</button></th>
+					  </tr>
+					  <tr>
+						<td><button id="CAM4_btn" type="button" class="btn btn-info" onclick="">CAM4</button></td>
+						<td><button id="CAM5_btn" type="button" class="btn btn-info" onclick="">CAM5</button></td>
+						<td><button id="CAM6_btn" type="button" class="btn btn-info" onclick="">CAM6</button></td>
+					  </tr>
+					</table>
+				</div>
 			</div>
 			<div class="camera_button_holder">
 				<button id="c_btn" type="button" class="btn btn-default" onclick="camera_clicked()">Cameras</button>

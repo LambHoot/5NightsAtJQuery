@@ -20,7 +20,10 @@ function camera_clicked(){
 		
 		numDrainers--;
 	}
-	
+}
+
+function updateCameraViews(){
+	UpdateAllRooms();
 }
 
 function resetCameras(){
@@ -28,3 +31,4 @@ function resetCameras(){
 	$("#camera_screen").addClass("hidden");
 	$("#c_btn").removeClass("active");
 }
+
