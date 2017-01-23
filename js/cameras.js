@@ -10,16 +10,16 @@ function camera_clicked(){
 		cameras_open = true;
 		$("#camera_screen").removeClass("hidden");
 		$("#c_btn").addClass("active");
-		
 		numDrainers++;
+		playCameraOpenSound();
 	}
 	//close camera
 	else{
 		cameras_open = false;
 		$("#camera_screen").addClass("hidden");
 		$("#c_btn").removeClass("active");
-		
 		numDrainers--;
+		playCameraCloseSound();
 	}
 }
 
@@ -30,6 +30,7 @@ function changeCameraViewImage(){
 function cameraViewButtonClick(camButtonNum){
 	camViewed = camButtonNum;
 	changeCameraViewImage();
+	playCameraSwitchSound();
 }
 
 function updateCameraViews(){

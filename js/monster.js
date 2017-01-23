@@ -61,6 +61,7 @@ function moveLM(){
 	var new_activity_level = LM_activity_level;
 	//movement logic for LM
 	if(moveDecision(LM_activity_level)){
+		playMonsterMoveSound(LM_position);
 		//0 or 1
 		var direction = Math.random();
 		//>0.4 is forward, less is backward
@@ -71,7 +72,7 @@ function moveLM(){
 				//check if door is closed
 				if(ld){
 					//reset the monster to 0
-					//alert("blocked left monster"); //play sound
+					playMonsterBlockedSound();
 					LM_position = 0;
 					LM_activity_level = 10;
 					lm = false;
@@ -81,9 +82,10 @@ function moveLM(){
 				}
 				else{
 					lm = false;
-					alert("LEFT MONSTER KILLED YOU!");
+					killPlayer("FREDDI");
+					//alert("LEFT MONSTER KILLED YOU!");
 					clearInterval(LM_update_valid);
-					resetGame();
+					//resetGame();
 					return;
 				}
 			}
@@ -135,6 +137,7 @@ function moveRM(){
 	//movement logic for RM
 	if(moveDecision(RM_activity_level)){
 		//0 or 1
+		playMonsterMoveSound(RM_position);
 		var direction = Math.random();
 		//>0.4 is forward, less is backward
 		//FORWARD
@@ -144,7 +147,7 @@ function moveRM(){
 				//check if door is closed
 				if(rd){
 					//reset the monster to 0
-					//alert("blocked right monster"); //play sound
+					playMonsterBlockedSound();
 					RM_position = 0;
 					RM_activity_level = 10;
 					rm = false;
@@ -154,9 +157,10 @@ function moveRM(){
 				}
 				else{
 					rm = false;
-					alert("RIGHT MONSTER KILLED YOU!");
+					killPlayer("LUTHER");
+					//alert("RIGHT MONSTER KILLED YOU!");
 					clearInterval(RM_update_valid);
-					resetGame();
+					//resetGame();
 					return;
 				}
 			}
@@ -246,6 +250,15 @@ function updateActivityLevel(activityLvl, direction){
 		return activityLvl - 1;
 		}
 	}
+}
+
+function killPlayer(monsterName){
+	clock = 0;//gives enough time for animation to finish without 6AM event taking over
+	playMonsterAttackSound();
+	setTimeout(function () {
+		alert(monsterName + " KILLED YOU!");
+		resetGame();
+    }, 6000);
 }
 
 function resetMonsters(){
