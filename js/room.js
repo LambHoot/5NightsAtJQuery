@@ -80,4 +80,5 @@ function resetRooms(){
 	rooms.push(new Room(8,5,"default"));
 	//rooms.push(new Room(9,6,"default"));
 	//rooms.push(new Room(10,6,"default"));
+	UpdateAllRooms();
 }

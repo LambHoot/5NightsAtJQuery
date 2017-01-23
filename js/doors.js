@@ -20,6 +20,7 @@ function ll_click()
 		ll = false;
 		$("#l_door").attr("src", "images/l_door_open.png");
 		numDrainers--;
+		playLightCloseSound();
 	}
 	//turn on light
 	else{
@@ -32,6 +33,7 @@ function ll_click()
 			$("#l_door").attr("src", "images/l_light.png");
 		}
 		numDrainers++;
+		playLightOpenSound();
 	}
 }
 function ld_click()
@@ -42,6 +44,7 @@ function ld_click()
 		$("#l_doorTop").addClass("hidden");
 		ld = false;
 		numDrainers--;
+		playDoorOpenSound();
 	}
 	//close door
 	else{
@@ -49,6 +52,7 @@ function ld_click()
 		$("#l_doorTop").removeClass("hidden");
 		ld = true;
 		numDrainers++;
+		playDoorCloseSound();
 	}
 }
 
@@ -62,6 +66,7 @@ function rl_click()
 		rl = false;
 		$("#r_door").attr("src", "images/r_door_open.png");
 		numDrainers--;
+		playLightCloseSound();
 	}
 	//turn on light
 	else{
@@ -74,6 +79,7 @@ function rl_click()
 			$("#r_door").attr("src", "images/r_light.png");
 		}
 		numDrainers++;
+		playLightOpenSound();
 	}
 }
 function rd_click()
@@ -84,6 +90,7 @@ function rd_click()
 		$("#r_doorTop").addClass("hidden");
 		rd = false;
 		numDrainers--;
+		playDoorOpenSound();
 	}
 	//close door
 	else{
@@ -91,6 +98,7 @@ function rd_click()
 		$("#r_doorTop").removeClass("hidden");
 		rd = true;
 		numDrainers++;
+		playDoorCloseSound();
 	}
 }
 
