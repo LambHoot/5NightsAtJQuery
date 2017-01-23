@@ -42,6 +42,7 @@ function ld_click()
 		$("#l_doorTop").addClass("hidden");
 		ld = false;
 		numDrainers--;
+		playOpenSound();
 	}
 	//close door
 	else{
@@ -49,6 +50,7 @@ function ld_click()
 		$("#l_doorTop").removeClass("hidden");
 		ld = true;
 		numDrainers++;
+		playDoorCloseSound();
 	}
 }
 
@@ -84,6 +86,7 @@ function rd_click()
 		$("#r_doorTop").addClass("hidden");
 		rd = false;
 		numDrainers--;
+		playOpenSound();
 	}
 	//close door
 	else{
@@ -91,6 +94,7 @@ function rd_click()
 		$("#r_doorTop").removeClass("hidden");
 		rd = true;
 		numDrainers++;
+		playDoorCloseSound();
 	}
 }
 

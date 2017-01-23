@@ -22,6 +22,8 @@ function startGame(){
 	
 	updateLM();
 	updateRM();
+	
+	playbgMusic();
 }
 
 function resetGame(){
@@ -31,4 +33,7 @@ function resetGame(){
 	resetDoors();
 	resetMonsters();
 	resetBattery();
+	resetRooms();
+	resetCameras();
+	resetSounds();
 }
