@@ -15,8 +15,9 @@ function updateClock(){
 	clock++;
 	$('#game_clock p').text(clock + "AM");
 	if(clock >= hoursToSurvive){
-		alert("YOU HAVE SURVIVED!");
 		gameActive = false;
+		$('#game_clock p').text("6AM");
+		alert("6AM YOU HAVE SURVIVED!");
 		resetGame();
 		clearInterval(clock_update);
 		return;

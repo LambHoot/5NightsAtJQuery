@@ -12,6 +12,7 @@ function userEndGame(){
 
 //This function will be triggered onClick of some start button
 function startGame(){
+	resetGame();
 	gameActive = true;
 	updateGameButtons();
 	updateClock();

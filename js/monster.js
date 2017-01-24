@@ -73,6 +73,7 @@ function moveLM(){
 				if(ld){
 					//reset the monster to 0
 					playMonsterBlockedSound();
+					$("#l_doorTop").effect( "shake", {times:2}, 120 );
 					LM_position = 0;
 					LM_activity_level = 10;
 					lm = false;
@@ -83,6 +84,10 @@ function moveLM(){
 				else{
 					lm = false;
 					killPlayer("FREDDI");
+					if(ll)
+						$("#l_door").attr("src", "images/l_light.png");
+					else
+						$("#l_door").attr("src", "images/l_door_open.png");
 					//alert("LEFT MONSTER KILLED YOU!");
 					clearInterval(LM_update_valid);
 					//resetGame();
@@ -148,6 +153,7 @@ function moveRM(){
 				if(rd){
 					//reset the monster to 0
 					playMonsterBlockedSound();
+					$("#r_doorTop").effect( "shake", {times:2}, 120 );
 					RM_position = 0;
 					RM_activity_level = 10;
 					rm = false;
@@ -158,6 +164,10 @@ function moveRM(){
 				else{
 					rm = false;
 					killPlayer("LUTHER");
+					if(rl)
+						$("#r_door").attr("src", "images/r_light.png");
+					else
+						$("#r_door").attr("src", "images/r_door_open.png");
 					//alert("RIGHT MONSTER KILLED YOU!");
 					clearInterval(RM_update_valid);
 					//resetGame();
