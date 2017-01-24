@@ -54,6 +54,10 @@ function playMonsterAttackSound(){
 	new Audio("./sfx/monsterAttackSound.wav").play();
 }
 
+function playPowerOutSound(){
+	new Audio("./sfx/powerOutSound.wav").play();
+}
+
 function resetSounds(){
 	bgMusic.pause();
 	bgMusic.currentTime = 0;
